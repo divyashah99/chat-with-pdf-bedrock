@@ -25,7 +25,7 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.vectorstores import FAISS
 
 bedrock_client = boto3.client(service_name="bedrock-runtime")
-bedrock_embeddings = BedrockEmbeddings(model_id="amazon.titan-embed-text-v1", client=bedrock_client)
+bedrock_embeddings = BedrockEmbeddings(model_id="amazon.titan-embed-text-v2:0", client=bedrock_client)
 
 folder_path="/tmp/"
 
@@ -38,8 +38,8 @@ def load_index():
     s3_client.download_file(Bucket=BUCKET_NAME, Key="my_faiss.pkl", Filename=f"{folder_path}my_faiss.pkl")
 
 def get_llm():
-    llm=Bedrock(model_id="anthropic.claude-v2:1", client=bedrock_client,
-                model_kwargs={'max_tokens_to_sample': 512})
+    llm=Bedrock(model_id="anthropic.claude-3-5-sonnet-20241022-v2:0", client=bedrock_client,
+                model_kwargs={'max_tokens': 512})
     return llm
 
 # get_response()

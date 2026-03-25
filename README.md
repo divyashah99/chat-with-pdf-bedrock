@@ -1,8 +1,8 @@
 # Chat With PDF - Generative AI Application
 ## Built Using Amazon Bedrock, Langchain, Python, Docker, Amazon S3
 ## Models used:
-    Amazon Titan Embedding G1 - Text
-    Anthropic Claude 2.1
+    Amazon Titan Text Embeddings V2
+    Anthropic Claude 3.5 Sonnet
 
 ## Introduction
 A CHATBOT like application built with AWS Amazon Bedrock, docker, python, Langchain, and Streamlit. It uses Retrieval-Augmented Generation (RAG) to provide context to the Large Language Model along with user query to generate response from a Knowledgebase.
